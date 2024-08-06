@@ -1,11 +1,8 @@
 #!/bin/bash
 
-# Initial action with curl
-#echo "Running initial setup..."
-#curl -s http://example.com/initial-setup-script.sh | bash
-
-chmod +x install-panel.sh
-./install.sh
+# Initial action with curl (commented out since it's not used)
+# echo "Running initial setup..."
+# curl -s http://example.com/initial-setup-script.sh | bash
 
 # Prompt the user for which panel to install
 echo "Which panel would you like to install on your system?"
