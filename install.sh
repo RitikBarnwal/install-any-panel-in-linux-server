@@ -4,6 +4,9 @@
 #echo "Running initial setup..."
 #curl -s http://example.com/initial-setup-script.sh | bash
 
+chmod +x install-panel.sh
+./install.sh
+
 # Prompt the user for which panel to install
 echo "Which panel would you like to install on your system?"
 echo "1) cPanel"
