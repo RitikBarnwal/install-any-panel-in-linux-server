@@ -20,7 +20,7 @@ This script provides an automated way to install popular server management contr
 Use these below command to run
 
 ```bash
-  curl -O https://raw.githubusercontent.com/RitikBarnwal/install-any-panel-in-linux-server/main/install.sh
+curl -O https://raw.githubusercontent.com/RitikBarnwal/install-any-panel-in-linux-server/main/install.sh
 chmod +x install.sh
 ./install.sh
 ```
