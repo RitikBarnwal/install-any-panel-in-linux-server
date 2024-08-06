@@ -1,8 +1,15 @@
 #!/bin/bash
 
-# Initial action with curl (commented out since it's not used)
-# echo "Running initial setup..."
-# curl -s http://example.com/initial-setup-script.sh | bash
+# _______        _             _    _           _   
+#|__   __|      | |           | |  | |         | |  
+#   | | _____  _| |_ _ __ __ _| |__| | ___  ___| |_ 
+#   | |/ _ \ \/ / __| '__/ _` |  __  |/ _ \/ __| __|
+#   | |  __/>  <| |_| | | (_| | |  | | (_) \__ \ |_ 
+#   |_|\___/_/\_\\__|_|  \__,_|_|  |_|\___/|___/\__|
+# ==================================================
+# TextraHost - Server Management Solutions
+# Website: https://textrahost.com
+# ==================================================
 
 # Prompt the user for which panel to install
 echo "Which panel would you like to install on your system?"
@@ -15,7 +22,20 @@ read -p "Enter the number of your choice: " choice
 case $choice in
     1)
         echo "Installing cPanel..."
-        cd /home && curl -o latest -L https://securedownloads.cpanel.net/latest && sh latest
+        
+        # Install required packages
+        yum install -y perl curl
+        
+        # Download and install cPanel
+        cd /home
+        curl -o latest -L https://securedownloads.cpanel.net/latest
+        sh latest
+        
+        # Start NetworkManager and enable it to start on boot
+        systemctl start NetworkManager
+        systemctl enable NetworkManager
+        
+        echo "cPanel installation completed!"
         ;;
     2)
         echo "Installing Plesk..."
